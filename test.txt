@@ -1,0 +1,9 @@
+Name: Python Slayer
+
+Characters: Hero, hedgies (minions), Melvin the python ( boss)
+
+Rooms: Store, boss room (snake pit), minion room
+
+Items: health potion, diamond gorilla hands
+
+Hero: Name(inputed), maxhp, wallet
