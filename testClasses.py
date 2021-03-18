@@ -20,3 +20,7 @@ class Minion:
 
 
 class Boss:
+    def __init__(self, name, maxhp, attack):
+        self.name = "Melvin"
+        self.maxhp = maxhp
+        self.attack = attack
