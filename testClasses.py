@@ -1,4 +1,5 @@
 class Hero:
+
     def __init__(self, name):
 
         # def printHero(self):
