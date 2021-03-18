@@ -1,9 +1,7 @@
 
 
 
-class Hero(Characters):
-    def coinTransaction(self, coinPurse):
-        self.coinPurse = coinPurse
+
 
 
 def createHero():
