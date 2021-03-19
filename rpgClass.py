@@ -1,5 +1,6 @@
 
 from welcomeFunction import welcomeMessage
+from boss import bossImage
 
 
 class Characters:
@@ -56,7 +57,7 @@ def selectChar():
             character = Hero("Human", 100, 50, 40)
         elif (choice == "2"):
             character = Hero("Orc", 110, 50, 35)
-        elif (choice == "3:"):
+        elif (choice == "3"):
             character = Hero("Elf", 90, 50, 45)
         else:
             print("Please follow my rules and enter a valid choice.")
@@ -114,23 +115,38 @@ def minionFight(minion, character):
 
 
 def bossFight(boss, character):
-    print(f"{boss.name} attacks {character.name}")
-    print(f"{character.name} takes {boss.attack} damage")
-    character.bossDamage()
-    # print(f"{boss.name} is unphased.")
-    print(f"{character.name}'s remaining health is {character.hp}")
-    print(f"{boss.name} takes {character.attack} damage")
-    boss.takeDamage()
-    print(f"{boss.name}'s remaining health is {boss.hp}")
-    if boss.hp <= 0:
-        print(
-            f"Victory! {boss.name} is slain and dies in a spectacular explosion.")
-    elif character.hp <= 0:
-        print("You have been slain hero! Please try again.")
-    elif boss.hp < 10:
-        print(f"{boss.name} is getting weak.")
-    else:
-        print(f"{boss.name} is still putting up a fight.")
+    bossImage()
+    print("You've come this far hero! Dont be scared!")
+    action = ''
+    while action != "2" and character.hp > 0 and boss.hp > 0:
+        action = input("""
+        What would you like to do?
+        1. Fight Python
+        2. Run Away
+        """)
+        if action == "1":
+            print(f"{boss.name} attacks {character.name}")
+            print(f"{character.name} takes {boss.attack} damage")
+            character.bossDamage()
+            # print(f"{boss.name} is unphased.")
+            print(f"{character.name}'s remaining health is {character.hp}")
+            print(f"{boss.name} takes {character.attack} damage")
+            boss.takeDamage()
+            print(f"{boss.name}'s remaining health is {boss.hp}")
+            if boss.hp <= 0:
+                print(
+                    f"Victory! {boss.name} is slain and dies in a spectacular explosion.")
+            elif character.hp <= 0:
+                print("You have been slain hero! Please try again.")
+            elif boss.hp < 10:
+                print(f"{boss.name} is getting weak.")
+            else:
+                print(f"{boss.name} is still putting up a fight.")
+        elif (action == "2"):
+            continue
+        else:
+            print("Please select a valid option.")
+    return action
 
 
 def barracks():
