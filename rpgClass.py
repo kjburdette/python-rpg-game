@@ -8,17 +8,19 @@ class Characters:
 
 
 class Hero(Characters):
-    pass
-    # def coinTransaction(self, coinPurse, coin):
-    #     self.coinPurse = coinPurse
-    #     self.coin = coin
-    #     coinPurse += coin
-    #     print(f"{coin} coin's have been added to your coin purse")
-# ^^^ needs revision ^^^
+    # def __init__(self, coinPurse):
+    coinPurse = 0
+    # self.coin = coin
+
+    def coinTransaction(self):
+        self.coinPurse += 1
+        print(
+            f"""\nOne coin has been added to your coin purse you now have {character.coinPurse} coin.""")
 
 
 class Villain(Characters):
-    pass
+    def takeDamage(self):
+        self.hp -= 5
 
 # Heros
 
@@ -48,7 +50,17 @@ def selectChar():
             character = Hero("Elf", 100, 25, 50)
         else:
             print("Please follow my rules and enter a valid choice.")
+
     return character
+
+
+def characterAttacks(character, minion):
+    print(f"{character.name} attacks {minion.name}")
+    print(f"{minion.name} takes 5 damage")
+    minion.takeDamage()
+    print(f"{minion.name} gets wrecked.")
+    print(f"{minion.name}'s remaining health is {minion.hp}")
+    character.coinTransaction()
 
 
 character = selectChar()
@@ -58,6 +70,6 @@ print(f"""
         Defense: {character.defense} \n
         Attack: {character.attack} \n
     """)
+characterAttacks(character, minion)
 
-
-# print(character.name)
+# combat
