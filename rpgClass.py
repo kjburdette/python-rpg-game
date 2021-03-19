@@ -1,28 +1,36 @@
-class Hero:
+class Characters:
     def __init__(self, name, hp, defense, attack):
         self.name = name
         self.hp = hp
         self.defense = defense
         self.attack = attack
-        self.characterClass = "Hero"
-    
-# class Hero(Characters):
-#     pass
+        # self.characterClass = "Hero"
+
+
+class Hero(Characters):
+    pass
     # def coinTransaction(self, coinPurse, coin):
     #     self.coinPurse = coinPurse
     #     self.coin = coin
     #     coinPurse += coin
     #     print(f"{coin} coin's have been added to your coin purse")
-#^^^ needs revision ^^^
+# ^^^ needs revision ^^^
+
+
+class Villain(Characters):
+    pass
 
 # Heros
 
+
 # Villans
-# villainMinion = Characters("Minion", 100, 20, 20)
-# villainBoss = Characters("Boss", 100, 75, 75)
+minion = Villain("Minion", 100, 20, 20)
+boss = Villain("Boss", 100, 75, 75)
 
 # print(heroHuman.name)
 # print(villanBoss.name)
+
+
 def selectChar():
     # charName = input("What is your name?")
     character = ""
@@ -32,16 +40,15 @@ def selectChar():
         o. Orc
         e. Elf
         """)
-        if ( choice == "h"):
+        if (choice == "h"):
             character = Hero("Human", 100, 50, 25)
-        elif ( choice == "o"):
-            character = Hero("Orc", 100, 25, 75)  
-        elif ( choice == "e"):
+        elif (choice == "o"):
+            character = Hero("Orc", 100, 25, 75)
+        elif (choice == "e"):
             character = Hero("Elf", 100, 25, 50)
         else:
             print("Please follow my rules and enter a valid choice.")
     return character
-
 
 
 character = selectChar()
@@ -52,5 +59,5 @@ print(f"""
         Attack: {character.attack} \n
     """)
 
-# print(character.name)
 
+# print(character.name)
