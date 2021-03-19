@@ -105,8 +105,6 @@ print(f"""
         Defense: {character.defense} \n
         Attack: {character.attack} \n
     """)
-
-
 adventureOption = ""
 while adventureOption != "4":
     adventureOption = mainMenu()
