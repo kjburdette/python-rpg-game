@@ -30,21 +30,15 @@ def welcomeMessage():
         |x/         \ >          |- - \@@@/ - \@@@@@/~~~\@@@@@/- -\@@@/- -|
         |x)         / '.         |- - \@@/ --- \@@@@/~~~\@@@@/---\@@/- - -|
         |x\       _(____''.__    | - - \@/ - - \@@@/- - -\@@@/-  -\@/- - -|
-       --\ -\--                   \~-.__ - - - -\@/- -- - \@/- - - -_ _.-~/
+       --\ -\--                  \~-.__ - - - - \@/- -- -\@/- - - - -__.-~/
         --\__|--                                    
 
-Greetings, hero! We need your help slaying the almighty Python who has
-commandeered our village townhall! Others have attempted in the past, and 
-those who fled and survived have notified us that there are snake handlers 
-who have been brainswashed and are guarding the Python. Should you defeat 
-the minions, they will drop coins which will allow you to purchase a better
-weapon at the barracks to aid you against the Python boss!
+  Welcome to PYTHON $LAYER. In this turn-based terminal RPG, you will
+  choose a hero (Human, Orc, Elf) and face minions to 
 
-  # NAMING
   # coins = ?
-  # minion = snake handlers?
+  # minion = ?
   # boss = Python
-  # store = barracks
       """)
 
 welcomeMessage()
