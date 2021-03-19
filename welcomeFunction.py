@@ -40,11 +40,5 @@ who have been brainswashed and are guarding the Python. Should you defeat
 the minions, they will drop coins which will allow you to purchase a better
 weapon at the barracks to aid you against the Python boss!
 
-  # NAMING
-  # coins = ?
-  # minion = snake handlers?
-  # boss = Python
-  # store = barracks
-      """)
 
-welcomeMessage()
+      """)

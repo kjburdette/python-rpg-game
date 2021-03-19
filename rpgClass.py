@@ -1,3 +1,6 @@
+from welcomeFunction import welcomeMessage
+
+
 class Characters:
     def __init__(self, name, hp, defense, attack):
         self.name = name
@@ -94,6 +97,7 @@ def mainMenu():
     return selection
 
 
+welcomeMessage()
 character = selectChar()
 print(f"""
         Your class is: {character.name} \n
@@ -101,8 +105,6 @@ print(f"""
         Defense: {character.defense} \n
         Attack: {character.attack} \n
     """)
-
-
 adventureOption = ""
 while adventureOption != "4":
     adventureOption = mainMenu()
