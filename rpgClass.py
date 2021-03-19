@@ -17,6 +17,9 @@ class Hero(Characters):
         print(
             f"""\nOne coin has been added to your coin purse you now have {character.coinPurse} coin.""")
 
+    def takeDamage(self):
+        self.hp -= 5
+
 
 class Villain(Characters):
     def takeDamage(self):
@@ -38,21 +41,23 @@ def selectChar():
     character = ""
     while character == "":
         choice = input("""Please select a character
-        h. Human
-        o. Orc
-        e. Elf
+        1. Human
+        2. Orc
+        3. Elf
         """)
-        if (choice == "h"):
+        if (choice == "1"):
             character = Hero("Human", 100, 50, 25)
-        elif (choice == "o"):
+        elif (choice == "2"):
             character = Hero("Orc", 100, 25, 75)
-        elif (choice == "e"):
+        elif (choice == "3:"):
             character = Hero("Elf", 100, 25, 50)
         else:
             print("Please follow my rules and enter a valid choice.")
 
     return character
 
+
+# combat
 
 def characterAttacks(character, minion):
     print(f"{character.name} attacks {minion.name}")
@@ -63,6 +68,32 @@ def characterAttacks(character, minion):
     character.coinTransaction()
 
 
+def minionAttacks(minion, character):
+    print(f"{minion.name} attacks {character.name}")
+    print(f"{character.name} takes 5 damage")
+    character.takeDamage()
+    print(f"{character.name}'s remaining health is {character.hp}")
+
+
+def bossAttacks(boss, character):
+    print(f"{boss.name} attacks {character.name}")
+    print(f"{boss.name} takes 5 damage")
+    minion.takeDamage()
+    # print(f"{boss.name} is unphased.")
+    print(f"{boss.name}'s remaining health is {boss.hp}")
+
+
+def mainMenu():
+    selection = input("""
+        What would you like to do next? Please select an option:
+        1. Fight minion
+        2. Fight boss
+        3. Barracks
+        4. Quit
+    """)
+    return selection
+
+
 character = selectChar()
 print(f"""
         Your class is: {character.name} \n
@@ -70,6 +101,16 @@ print(f"""
         Defense: {character.defense} \n
         Attack: {character.attack} \n
     """)
-characterAttacks(character, minion)
 
-# combat
+
+adventureOption = ""
+while adventureOption != "4":
+    adventureOption = mainMenu()
+    if (adventureOption == "1"):
+        minionAttacks(character, minion)
+    elif (adventureOption == "2"):
+        bossAttacks(character, boss)
+    elif (adventureOption == "3"):
+        adventureOption = barracks()
+    else:
+        pass
