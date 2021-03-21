@@ -1,6 +1,8 @@
 
 from welcomeFunction import welcomeMessage
 from boss import bossImage
+from sword import swordImage
+from gameOver import gameOver
 
 
 class Characters:
@@ -137,12 +139,16 @@ def bossFight(boss, character):
                 print(
                     f"Victory! {boss.name} is slain and dies in a spectacular explosion.")
             elif character.hp <= 0:
-                print("You have been slain hero! Please try again.")
+                print("You have been slain hero! \n\n GAME OVER\n")
+                # Which do you guys prefer? I don't want to overdo it with the ascii art...
+                gameOver()
             elif boss.hp < 10:
                 print(f"{boss.name} is getting weak.")
             else:
                 print(f"{boss.name} is still putting up a fight.")
         elif (action == "2"):
+            print(
+                "You are terrified at the site of the almighty Python. You cower away to safety.")
             continue
         else:
             print("Please select a valid option.")
@@ -162,6 +168,7 @@ def barracks():
         if purchase == "1" and character.coinPurse >= 5:
             character.attack += 50
             character.coinPurse -= 5
+            swordImage()
             print(
                 f"You now have {character.attack} attack and {character.coinPurse} coins! Pleasure doing business with you.")
         elif purchase == "2" and character.coinPurse >= 1:
